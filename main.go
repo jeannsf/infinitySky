@@ -1,28 +1,14 @@
 package main
 
 import (
+	"infinity-sky/game"
 	"github.com/hajimehoshi/ebiten/v2"
 )
 
-type Game struct {
-}
-
-func (g *Game) Update() error {
-	return nil
-}
-
-func (g *Game) Draw(screen *ebiten.Image) {
-}
-
-func (g *Game) Layout(outsideWidth, outsideHeight int) (screenWidth, screenHeight int) {
-	return outsideWidth, outsideHeight
-}
-
 func main() {
-	g := &Game{}
+	g := game.NewGame()
 
-	err := ebiten.RunGame(g)
-	if err != nil {
+	if err := ebiten.RunGame(g); err != nil {
 		panic(err)
 	}
 }
