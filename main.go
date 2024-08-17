@@ -1,14 +1,16 @@
 package main
 
 import (
-	"infinity-sky/game"
+	"game/game"
+
 	"github.com/hajimehoshi/ebiten/v2"
 )
 
 func main() {
 	g := game.NewGame()
 
-	if err := ebiten.RunGame(g); err != nil {
+	err := ebiten.RunGame(g)
+	if err != nil {
 		panic(err)
 	}
 }
